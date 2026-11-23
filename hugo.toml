@@ -1,0 +1,67 @@
+# Сайт: https://eva-tarasov.github.io — Hugo + тема PaperMod (git submodule в themes/PaperMod).
+baseURL = "https://eva-tarasov.github.io/"
+locale = "ru"
+defaultContentLanguage = "ru"
+title = "Евгений Тарасов"
+theme = "PaperMod"
+enableRobotsTXT = true
+enableEmoji = true
+
+[pagination]
+  pagerSize = 10
+
+[markup.goldmark.renderer]
+  unsafe = false            # сырой HTML в статьях не нужен: картинки — через shortcode figure
+
+[markup.highlight]
+  noClasses = false         # подсветка кода цветами темы (светлая/тёмная)
+
+[params]
+  env = "production"        # включает мета-теги для поисковиков и соцсетей
+  description = "Из iOS в AI Product Engineer: агенты, backend и честные эксперименты"
+  author = "Евгений Тарасов"
+  defaultTheme = "auto"     # светлая или тёмная — по настройке системы читателя
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  DateFormat = "2 January 2006"
+
+  [params.homeInfoParams]
+    Title = "Привет 👋"
+    Content = """
+Я Евгений, шесть лет пишу под iOS, а последний год — backend на Python и AI-агенты.
+Здесь пишу о том, что строю, и о том, что пошло не так. Цель — AI Product Engineer.
+"""
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/eva-tarasov"
+
+  [params.editPost]
+    URL = "https://github.com/eva-tarasov/eva-tarasov.github.io/blob/main/content"
+    Text = "Предложить правку"
+    appendFilePath = true
+
+[[menu.main]]
+  identifier = "posts"
+  name = "Статьи"
+  url = "/posts/"
+  weight = 10
+[[menu.main]]
+  identifier = "tags"
+  name = "Теги"
+  url = "/tags/"
+  weight = 20
+[[menu.main]]
+  identifier = "about"
+  name = "Обо мне"
+  url = "/about/"
+  weight = 30
+[[menu.main]]
+  identifier = "forgemini"
+  name = "ForgeMini"
+  url = "https://github.com/eva-tarasov/ForgeMini"
+  weight = 40
